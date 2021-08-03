@@ -1,0 +1,7 @@
+{
+  "name": "curso-typescript",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
