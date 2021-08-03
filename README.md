@@ -15,3 +15,9 @@ yarn tsc --init
 ```bash
 yarn tsc
 ```
+
+## Como compilar automaticamente todos os arquivos .ts após qualquer alteração
+
+```bash
+yarn tsc --watch
+```
