@@ -1,0 +1,1 @@
+{"version":3,"file":"readonly-property.js","sourceRoot":"","sources":["../../src/4-interfaces/readonly-property.ts"],"names":[],"mappings":";AAKC,CAAC;AAEF,IAAM,OAAO,GAAY;IACrB,KAAK,EAAE,SAAS;IAChB,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,CAAC;CACZ,CAAC;AAEF,OAAO,CAAC,KAAK,GAAG,yBAAyB,CAAC;AAI1C,OAAO,CAAC,GAAG,CAAC;IACR,OAAO,SAAA;CACV,CAAC,CAAC"}
