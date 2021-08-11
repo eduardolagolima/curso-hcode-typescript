@@ -3,10 +3,10 @@ class MyDocument {
     private title: string = 'Título MyDocument';
 
     // * ECMAScript
-    #subtitle: string = 'Subtítulo MyDocument';
+    // #subtitle: string = 'Subtítulo MyDocument';
 
     showPrivateAttribute() {
-        return this.#subtitle;
+        // return this.#subtitle;
     }
 }
 
@@ -15,10 +15,10 @@ class AnotherDocument extends MyDocument {
     // private title: string = 'Título AnotherDocument';
 
     // * Funciona no ECMAScript
-    #subtitle: string = 'Subtítulo AnotherDocument';
+    // #subtitle: string = 'Subtítulo AnotherDocument';
 
     showPrivateAttribute() {
-        return this.#subtitle;
+        // return this.#subtitle;
     }
 }
 
