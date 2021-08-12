@@ -42,8 +42,14 @@ export default class CalculatorController {
     }
 
     addNumber(number: number): void {
+        if (isNaN(Number(this.operation.lastPosition))) {
+            this.addOperation(number.toString())
+        } else {
+            number = Number(this.operation.lastPosition.toString() + number.toString());
+            this.operation.lastPosition = number.toString();
+        }
+
         this.screen.value = number.toString();
-        this.addOperation(number.toString())
     }
 
     addOperator(operator: string) {
