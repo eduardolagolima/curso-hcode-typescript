@@ -1,1 +1,3 @@
-console.log('Teste 123');
+import CalculatorController from './calculator/CalculatorController.js';
+
+new CalculatorController();
