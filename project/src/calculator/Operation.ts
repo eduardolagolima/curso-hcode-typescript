@@ -25,8 +25,7 @@ export default class Operation {
     }
 
     get lastPosition(): string {
-        const lastIndex = this.operation.length ? this.operation.length - 1 : 0;
-        return this.operation[lastIndex];
+        return this.operation.length ? this.operation[this.operation.length - 1] : '0';
     }
 
     set lastPosition(value: string) {

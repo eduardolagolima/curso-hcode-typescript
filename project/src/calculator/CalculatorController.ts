@@ -53,7 +53,15 @@ export default class CalculatorController {
     }
 
     addOperator(operator: string) {
-        this.operation.add(operator);
+        if (isNaN(Number(this.operation.lastPosition))) {
+            this.operation.lastPosition = operator;
+        } else {
+            if (this.operation.length === 0) {
+                this.addOperation('0');    
+            }
+
+            this.addOperation(operator);
+        }
     }
 
     calculate(): void {
