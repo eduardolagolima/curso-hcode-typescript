@@ -5,7 +5,9 @@ import Operation from './Operation.js';
 export default class CalculatorController {
     constructor(
         private screen = new Screen(),
-        private operation = new Operation(),
+        private operation = new Operation({
+            whenCalculate: (result: string) => this.screen.value = result
+        }),
     ) {
         new DateTime();
         this.buttonEvents();
@@ -29,7 +31,7 @@ export default class CalculatorController {
                 } else if (target.id === 'porcentagem') {
 
                 } else if (target.id === 'igual') {
-
+                    this.calculate();
                 }
             });
         });
@@ -46,5 +48,9 @@ export default class CalculatorController {
 
     addOperator(operator: string) {
         this.operation.add(operator);
+    }
+
+    calculate(): void {
+        this.operation.calculate();
     }
 }
