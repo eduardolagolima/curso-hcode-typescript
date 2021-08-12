@@ -1,9 +1,11 @@
 import DateTime from './DateTime.js';
 import Screen from './Screen.js';
+import Operation from './Operation.js';
 
 export default class CalculatorController {
     constructor(
-        private screen = new Screen()
+        private screen = new Screen(),
+        private operation = new Operation(),
     ) {
         new DateTime();
         this.buttonEvents();
@@ -16,14 +18,8 @@ export default class CalculatorController {
 
                 if (target.className === 'numero') {
                     this.addNumber(Number(target.dataset.valor));
-                } else if (target.id === 'adicao') {
-
-                } else if (target.id === 'subtracao') {
-
-                } else if (target.id === 'divisao') {
-
-                } else if (target.id === 'multiplicacao') {
-
+                } else if (target.className === 'operacao') {
+                    this.addOperator(String(target.dataset.valor));
                 } else if (target.id === 'ponto') {
 
                 } else if (target.id === 'limpar') {
@@ -39,7 +35,16 @@ export default class CalculatorController {
         });
     }
 
+    addOperation(operation: string): void {
+        this.operation.add(operation);
+    }
+
     addNumber(number: number): void {
         this.screen.value = number.toString();
+        this.addOperation(number.toString())
+    }
+
+    addOperator(operator: string) {
+        this.operation.add(operator);
     }
 }
