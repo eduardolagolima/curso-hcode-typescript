@@ -1,7 +1,10 @@
 import DateTime from './DateTime.js';
+import Screen from './Screen.js';
 
 export default class CalculatorController {
-    constructor() {
+    constructor(
+        private screen = new Screen()
+    ) {
         new DateTime();
     }
 }
