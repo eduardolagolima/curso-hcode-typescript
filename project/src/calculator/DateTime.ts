@@ -1,24 +1,21 @@
 export default class DateTime {
-    private dateElement: HTMLDivElement | null;
-    private timeElement: HTMLTimeElement | null;
+    private _date: HTMLDivElement | null = document.querySelector('#datetime > div:nth-child(2)');
+    private _time: HTMLTimeElement | null = document.querySelector('#datetime time');
 
     constructor() {
-        this.dateElement = document.querySelector('#datetime > div:nth-child(2)');
-        this.timeElement = document.querySelector('#datetime time');
-
         this.render();
         setInterval(() => this.render(), 1000);
     }
 
     set date(value: string) {
-        if (this.dateElement) {
-            this.dateElement.innerHTML = value;
+        if (this._date) {
+            this._date.innerHTML = value;
         }
     }
 
     set time(value: string) {
-        if (this.timeElement) {
-            this.timeElement.innerHTML = value;
+        if (this._time) {
+            this._time.innerHTML = value;
         }
     }
 
@@ -31,7 +28,7 @@ export default class DateTime {
         const minutes = date.getMinutes().toString().padStart(2, '0');
         const twoPoints = date.getSeconds() % 2 === 0 ? ':' : ' ';
 
-        this.date = `${day} ${month} ${year}`;
+        this.date = `${day} de ${month} de ${year}`;
         this.time = `${hours}${twoPoints}${minutes}`;
     }
 }
