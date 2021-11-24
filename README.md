@@ -1,4 +1,4 @@
-# curso-typescript
+# Curso da HCode sobre TypeScript
 
 ## Link do curso
 
